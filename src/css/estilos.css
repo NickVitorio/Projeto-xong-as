@@ -1,0 +1,312 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #000000;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+
+}
+
+main::after {
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+    z-index: -1;
+
+}
+
+
+.informacoes .logo {
+    max-width: 350px;
+    font-size: 60px;
+    filter: invert(1);
+    margin-bottom: 80px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.informacoes .descricao {
+    width: 49%;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 30px;
+
+
+}
+
+
+.informacoes .descricao span {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+
+.botoes-carrossel {
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes-carrossel .botao {
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.botoes-carrossel .botao:hover {
+
+    scale: 1.1;
+    background-color: #00ccff;
+}
+
+.botoes-carrossel .botao.selecionado {
+    background-color: rgb(212, 16, 16);
+
+}
+
+
+.menu-lateral {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-lateral .icone {
+    width: 30px;
+    filter: invert();
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-lateral .icone:hover {
+    transform: scale(1.2);
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.carrossel .imagens {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+    opacity: 50%;
+}
+
+.carrossel .imagens.ativa {
+    display: block;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 50%;
+    }
+
+}
+
+
+@keyframes mudarImagemPersonagem {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+
+}
+
+@keyframes abrindolista {
+    from {
+        height: 0%;
+        width: 0%;
+    }
+
+    to {
+        height: 80%;
+        width: 80%;
+    }
+
+
+}
+
+
+#integrantes {
+    animation-name: abrindolista;
+    animation-duration: 0.5s;
+    z-index: 2;
+    background-color: rgb(12, 12, 12);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 80%;
+    overflow-y: auto;
+
+}
+
+
+.titulo-integrantes::before {
+    content: "";
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+    z-index: -1;
+}
+
+.area-dos-artistas {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, 0.8);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+}
+
+
+.titulo-integrantes {
+    color: #ffffff;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 0 0 30px rgb(0, 0, 0);
+    top: 0;
+    position: absolute;
+    margin-top: 20px;
+    border-bottom: 2px solid #ffffff;
+    width: 80%;
+
+    text-align: center;
+    z-index: 3;
+
+}
+
+.lista-integrantes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 3;
+    width: 100%;
+
+
+
+}
+
+.artista {
+    color: #ffffff;
+    font-family: 'Russo One', sans-serif;
+    transition: 0.5s ease-in-out;
+    font-size: 16px;
+
+}
+
+.artista:hover {
+    color: red;
+    text-shadow: 0 0 15px red;
+    font-size: 20px;
+    border-bottom: 2px solid #ffffff;
+
+}
+
+
+.personagens {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    opacity: 0.3;
+    animation-name: mudarImagemPersonagem;
+    animation-duration: 0.5s;
+}
+
+.personagens.ativo {
+    display: block;
+}
+
+#seta {
+    padding-top: 20px;
+    padding-left: 10px;
+    filter: invert();
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 6;
+}
+
+#seta:hover {
+    scale: 1.1;
+}
+
+.minhas-infos {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.icone-github {
+    filter: invert();
+    width: 25px;
+    transition: 0.5s ease-in-out;
+
+}
+
+.icone-github:hover {
+    scale: 1.5;
+}
